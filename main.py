@@ -67,8 +67,6 @@ def plot_signal_pair(
          title1: str,
          title2: str,
          filename: str,
-         marker1: str = '',
-         marker2: str = ''
 ):
     fig, ax = plt.subplots(2, 1, figsize=(12, 10))
 
@@ -178,7 +176,6 @@ def main():
          f'Upsampled Signal (f0) - Samples {plot_range.start}-{plot_range.stop}',
          f'Upsampled Signal (f1) - Samples {plot_range.start}-{plot_range.stop}',
          'f_plots.png',
-            marker1='o', marker2='x'
     )
 
     plot_signal_pair(
@@ -194,7 +191,6 @@ def main():
          f'Original Signal (Samples {plot_range.start}-{plot_range.stop})',
             f'Reconstructed Signal (Samples {plot_range.start}-{plot_range.stop})',
           'reconstruction_plots.png',
-          marker1='.', marker2=''
     )
 
     # --- Error Calculation ---
