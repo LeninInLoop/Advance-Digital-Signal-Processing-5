@@ -25,8 +25,10 @@ class FilterCalculator:
         return np.flip(h0)
 
     @staticmethod
-    def calculate_g1(h1: np.ndarray) -> np.ndarray:
-        return np.flip(h1)
+    def calculate_g1(h0: np.ndarray) -> np.ndarray:
+        n_indices = np.arange(len(h0))
+        alternating_sign = (-1) ** n_indices
+        return alternating_sign * h0
 
 
 class DataProcessor:
@@ -108,7 +110,7 @@ def main():
     h0 = FilterCalculator.generate_h0()
     h1 = FilterCalculator.calculate_h1(h0)
     g0 = FilterCalculator.calculate_g0(h0)
-    g1 = FilterCalculator.calculate_g1(h1)
+    g1 = FilterCalculator.calculate_g1(h0)
 
     print(f"h₀ (N={len(h0)}):")
     print(h0)
